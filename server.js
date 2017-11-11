@@ -2,9 +2,46 @@ const express = require("express");
 const path = require("path");
 const fs = require("fs");
 
-let reservations = ["Grace"];
-let waitList = ["James"];
-let all = {reservations: ["grace"], waitlist: ["james"]};
+let reservations =
+	[{ 
+		Name: "Grace",
+		Phone: "9999999999",
+		Email: "example@gmail.com",
+		Unique_ID: 1
+	},
+	{ 
+		Name: "Mike",
+		Phone: "9999999999",
+		Email: "example@gmail.com",
+		Unique_ID: 2
+	},
+	{ 
+		Name: "Don",
+		Phone: "9999999999",
+		Email: "example@gmail.com",
+		Unique_ID: 3
+	},
+	{ 
+		Name: "Fausto",
+		Phone: "9999999999",
+		Email: "example@gmail.com",
+		Unique_ID: 4
+	},
+	{ 
+		Name: "Richard",
+		Phone: "9999999999",
+		Email: "example@gmail.com",
+		Unique_ID: 5
+	}];
+let waitList = 
+	[{ 
+		Name: "James",
+		Phone: "8888888888",
+		Email: "example1@gmail.com",
+		Unique_ID: 6
+	}];
+
+let all = {reservations, waitList};
 
 let app = express();
 let PORT = process.env.PORT || 3000;
@@ -16,12 +53,10 @@ app.get("/", function(req, res) {
 
 app.get("/tables", function(req, res) {
   res.sendFile(path.join(__dirname, "tables.html"));
-  res.json(all);
 });
 
 app.get("/reserve", function(req, res) {
   res.sendFile(path.join(__dirname, "reserve.html"));
-  res.json(waitList);
 });
 
 app.get("/api/:all?", function(req, res) {
@@ -31,6 +66,8 @@ app.get("/api/:all?", function(req, res) {
     return res.json(all.reservations);
   } else if (reservedTables === "waitlist") {
   	return res.json(all.waitlist);
+  } else {
+  	return res.json(all);
   };
 
 });
