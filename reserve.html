@@ -1,6 +1,4 @@
-
 <!-- ===== PSUEDO CODE ===== -->
-
 <!-- 
 1. Intro Jumbtron (Home Page)
 	- headers a 2 buttons "View Tables" + "Home"
@@ -17,8 +15,6 @@
 		-
 3. Footer (Tied) 
 -->
-
-
 <!DOCTYPE html>
 <html>
 
@@ -44,14 +40,39 @@
                 <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
             </p>
         </div>
-        <div class="footer">
-        	<a href="">API Table Link</a>
-        	<span> | </span>
-        	<a href="">API Wait List</a>
+        <div class="card">
+            <div class="card-header">
+                Table Reservation
+            </div>
+            <div class="card-body">
+                <form>
+                    <div class="form-group">
+                        <label class="form-control-label" for="formGroupExampleInput">Name</label>
+                        <input type="text" class="form-control" id="name" placeholder="Example input">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-control-label" for="formGroupExampleInput2">Phone Number</label>
+                        <input type="text" class="form-control" id="phone" placeholder="Another input">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-control-label" for="formGroupExampleInput">Email</label>
+                        <input type="text" class="form-control" id="email" placeholder="Example input">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-control-label" for="formGroupExampleInput2">Unique ID</label>
+                        <input type="text" class="form-control" id="uniqueId" placeholder="Another input">
+                    </div>
+                    <button type="submit" class="btn btn-primary" id="add-employee">Submit</button>
+                </form>
+            </div>
         </div>
-    </div>
-	<!-- Local Javascript -->
-    <!--     <script src="???"></script> -->
+        <div class="footer">
+            <a href="">API Table Link</a>
+            <span> | </span>
+            <a href="">API Wait List</a>
+        </div>
+        <!-- Local Javascript -->
+        <!--     <script src="???"></script> -->
 </body>
 
 </html>
